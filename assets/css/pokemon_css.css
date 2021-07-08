@@ -1,0 +1,259 @@
+/* import font external Linotte */
+@font-face {
+  font-family: "Linotte";
+  src: url("../font/linotte/LinotteRegular.woff");
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+/*Sumber : https://www.freefonts.io/linotte-font-free-download/ */
+/* Lisensi : Free untuk personal use */
+
+/* loader */
+.loader-wrapper {
+  --line-width: 5px;
+  --curtain-color: #f1faee;
+  --outer-line-color: #efa48b;
+  --middle-line-color: #685369;
+  --inner-line-color: #f45b69;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+.loader {
+  display: block;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: var(--line-width) solid transparent;
+  border-top-color: var(--outer-line-color);
+  border-radius: 100%;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  z-index: 1001;
+}
+
+.loader:before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  border: var(--line-width) solid transparent;
+  border-top-color: var(--inner-line-color);
+  border-radius: 100%;
+  -webkit-animation: spin 3s linear infinite;
+  animation: spin 3s linear infinite;
+}
+
+.loader:after {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  border: var(--line-width) solid transparent;
+  border-top-color: var(--middle-line-color);
+  border-radius: 100%;
+  -webkit-animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.loader-wrapper .loader-section {
+  position: fixed;
+  top: 0;
+  background: var(--curtain-color);
+  width: 51%;
+  height: 100%;
+  z-index: 1000;
+}
+
+.loader-wrapper .loader-section.section-left {
+  left: 0;
+}
+.loader-wrapper .loader-section.section-right {
+  right: 0;
+}
+
+.loaded .loader-wrapper .loader-section.section-left {
+  transform: translateX(-100%);
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.loaded .loader-wrapper .loader-section.section-right {
+  transform: translateX(100%);
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.loaded .loader {
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+.loaded .loader-wrapper {
+  visibility: hidden;
+  transform: translateY(-100%);
+  transition: all 0.3s 1s ease-out;
+}
+/* Akhir Loader */
+
+/* bagian body */
+body {
+  background-color: white;
+  color: white;
+  margin: 0;
+}
+
+/* teks p */
+p {
+  font-family: "Linotte";
+}
+
+/* teks h2 */
+h2 {
+  font-family: "Linotte";
+  color: black;
+}
+
+h3 {
+  font-family: "Linotte";
+}
+
+/* teks h5 */
+h5 {
+  font-family: "Quicksand", sans-serif;
+}
+
+/* bagian header */
+header {
+  display: inline;
+}
+
+/* jumbotron */
+.jumbotron {
+  font-size: 20px;
+  padding: 60px;
+  background-color: #7476cb;
+  text-align: center;
+  color: white;
+}
+
+/* bagian gambar pokedex */
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 269px;
+  padding-top: 100px;
+}
+
+/* pengaturan container */
+.container {
+  padding: 40px;
+  margin: 0 auto;
+}
+
+/* teks h1 */
+h1 {
+  text-align: center;
+  font-size: 54px;
+  color: black;
+  font-family: "Quicksand", sans-serif;
+}
+
+/* pokedex generasi 1 */
+#pokedex {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 20px;
+  padding-inline-start: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* pokedex generasi 1 */
+#pokedex2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 20px;
+  padding-inline-start: 0;
+}
+
+/* desain card pokemon */
+.card {
+  box-shadow: 0 4px 8px 0 grey;
+  border-radius: 5px;
+  padding: 40px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* waktu hover */
+.card:hover {
+  animation: bounce 0.5s linear;
+}
+/* eks nama pada card*/
+.card-title {
+  text-transform: capitalize;
+  margin-bottom: 0px;
+  font-size: 32px;
+  font-weight: normal;
+}
+/* teks tipe */
+.card-subtitle {
+  margin-top: 5px;
+  color: #666;
+  font-weight: lighter;
+}
+/* gambar pada kartu */
+.card-image {
+  height: 120px;
+}
+/* animasi kartu */
+@keyframes bounce {
+  20% {
+    transform: translateY(-6px);
+  }
+  40% {
+    transform: translateY(0px);
+  }
+
+  80% {
+    transform: translateY(-2px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

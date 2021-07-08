@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- bagian head -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- nama website -->
+    <title>Website Pokedex - Pokemon</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/pokemon_css.css">
+</head>
+<!-- bagian body -->
+
+<body>
+    <div>
+        <div class="jumbotron">
+            <!-- Identitas Sarang IT -->
+            <img src="assets/gambar/Pokemon.svg" alt="logo Pokemon" style="padding-bottom: 30px;" />
+            <h1 style="color: #ffcb05;">Pokémon</h1>
+            <h3>List Pokemon dari PokeAPI</h3>
+            <hr>
+            <h5 style="color: whitesmoke;">Irvan Maulana - 2021 </h5>
+            <a href="https://instagram.com/sarang.it" class="icofont-instagram" style="color: white;"></a>
+            <a href="https://www.linkedin.com/company/sarang-it" class="icofont-linkedin" style="color: white;"></a>
+          </div>
+        <div>
+            <div class="loader-wrapper">
+                <div class="loader"></div>
+                <div class="loader-section section-left"></div>
+                <div class="loader-section section-right"></div>
+            </div>
+        </div>
+        <div>
+            <!-- container -->
+            <div class="container">
+                <!-- Judul -->
+                <img src="assets/gambar/pokedex.png" alt="logo Pokedex 1" class="center" />
+                <h1>Daftar Pokedex Pokemon Generasi 1</h1>
+                <!-- list -->
+                <ol id="pokedex"></ol>
+                <img src="assets/gambar/pokedex.png" alt="logo Pokedex 2" class="center" />
+                <h1>Daftar Pokedex Pokemon Generasi 2</h1>
+                <ol id="pokedex2"></ol>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<!-- javascript -->
+<script src="assets/js/pokemon_javascript.js"></script>
+
+</html>
